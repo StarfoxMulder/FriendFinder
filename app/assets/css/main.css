@@ -1,0 +1,54 @@
+#indexP {
+	background-image: url("../images/bkrnd2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 35%;
+}
+
+#register {
+	margin-top: 5%;
+}
+#register > a {
+	/*font-family: 'Anton', sans-serif;*/
+	font-family: 'Fugaz One', cursive;
+	font-weight: 800;
+	letter-spacing: 3px;
+	/*text-shadow: -1px 0 #587F76, 0 1px #587F76, 1px 0 #587F76, 0 -1px #587F76;*/
+}
+
+#findfriend {
+	margin-top: 5%;
+}
+#findfriend > a {
+	font-family: 'Fugaz One', cursive;
+	font-weight: 800;
+	letter-spacing: 3px;
+}
+
+
+#biglogo {
+	font-family: 'Shrikhand', cursive;
+	font-size: 38px;
+	letter-spacing: 15px;
+	/*text-shadow: -1px 0 #587F76, 0 1px #587F76, 1px 0 #587F76, 0 -1px #587F76;*/
+}
+
+/* -- Survey Page -- */
+
+#surveyP {
+	background-color: #C2FFEC;
+}
+
+#overview {
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid #587F76;
+	padding: 2% 3%;
+	font-family: 'Yantramanav', sans-serif;
+	font size: 20px;
+	color: #587F76;
+}
+
+.input-field {
+	background-color: white;
+}
