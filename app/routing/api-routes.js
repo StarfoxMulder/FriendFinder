@@ -129,18 +129,22 @@ app.get("/home/all", function (req, res) {
 });
 
 // Create new users - takes in JSON input
-app.post("/reserve/new", function (req, res) {
-	var newReservation = req.body;
-	newReservation.name = newReservation.name.replace(/\s+/g, "").toLowerCase();
+app.post("/register/new", function (req, res) {
+	var newUser = req.body;
+	newUser.name = newUser.name.replace(/\s+/g, "").toLowerCase();
 
 	// console.log(newReservation);
 
-	users.push(newReservation);
+	users.push(newUser);
 
 	console.log(users);
 
 	// res.json(newReservation);
 });
+
+app.post("/survey/new", function(req, res) {
+	var newSurvey
+})
 
 // Starts the server to begin listening
 // =============================================================

@@ -40,11 +40,11 @@
 		<div class="nav-wrapper subnav-filters">
 			<div class="row">
 
-				<form class=" col s12">
+				<form id="formValidate" class="col s12">
 
 				  <div class="row">
-				  <div class="input-field col s12" id="1">
-				    <select>
+				  <div class="input-field col s12">
+				    <select id="1">
 				      <option value="0" selected>I believe that my pet experiences human emotions</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
@@ -57,8 +57,8 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="2">
-				    <select>
+				  <div class="input-field col s12">
+				    <select id="2">
 				      <option value="0" selected>I want to find someone who wants to spend as much (or more!) time with my pet as I do</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
@@ -71,9 +71,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="3">
-				    <select>
-				      <option value="" disabled selected>I want to find someone whose pet is highly sociable, potentially BFFs with my own pet</option>
+				  <div class="input-field col s12">
+				    <select id="3">
+				      <option value="0" disabled selected>I want to find someone whose pet is highly sociable, potentially BFFs with my own pet</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -85,9 +85,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="4">
-				    <select>
-				      <option value="" disabled selected>My ideal first outing/date together would involve having our pets with us</option>
+				  <div class="input-field col s12">
+				    <select id="4">
+				      <option value="0" disabled selected>My ideal first outing/date together would involve having our pets with us</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -99,9 +99,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="5">
-				    <select>
-				      <option value="" disabled selected>My pet is family</option>
+				  <div class="input-field col s12">
+				    <select id="5">
+				      <option value="0" disabled selected>My pet is family</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -113,9 +113,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="6">
-				    <select>
-				      <option value="" disabled selected>I have absolutely no reservations about this whole thing!</option>
+				  <div class="input-field col s12">
+				    <select id="6">
+				      <option value="0" disabled selected>I have absolutely no reservations about this whole thing!</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -127,9 +127,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="7">
-				    <select>
-				      <option value="" disabled selected>My pet is very quick to make friends with everyone!</option>
+				  <div class="input-field col s12">
+				    <select id="7">
+				      <option value="0" disabled selected>My pet is very quick to make friends with everyone!</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -141,9 +141,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="8">
-				    <select>
-				      <option value="" disabled selected>My pet runs off of rubs or other forms of physical affection</option>
+				  <div class="input-field col s12">
+				    <select id="8">
+				      <option value="0" disabled selected>My pet runs off of rubs or other forms of physical affection</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -155,9 +155,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="9">
-				    <select>
-				      <option value="" disabled selected>My pet senses my needs and acts on them</option>
+				  <div class="input-field col s12">
+				    <select id="9">
+				      <option value="0" disabled selected>My pet senses my needs and acts on them</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -169,9 +169,9 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12" id="10">
-				    <select>
-				      <option value="" disabled selected>My pet will get along well with yours, regardless of species</option>
+				  <div class="input-field col s12">
+				    <select id="10">
+				      <option value="0" disabled selected>My pet will get along well with yours, regardless of species</option>
 				      <option value="1">1</option>
 				      <option value="2">2</option>
 				      <option value="3">3</option>
@@ -179,6 +179,15 @@
 				      <option value="5">5</option>
 				    </select>
 				    <label>About Your Pet Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="col s3 offset-s9">
+				  	<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">
+				  		Submit
+				  		<i class="material-icons right">send</i>
+				  	</button>
 				  </div>
 				  </div>
 
@@ -189,5 +198,67 @@
 		</div>	<!-- end container for survey -->
 		</div>
 	</div> <!-- end section -->
+	<script>
+		console.log('ready');
+		AnsArray = [];
+
+		$('#submit').on('click', function () {
+			//for each input-field, get option value
+			// if val = 0, push to  and push it to answers []
+			$("#formValidate").validate({
+				rules: {
+					1: "required",
+					2: "required",
+					3: "required",
+					4: "required",
+					5: "required",
+					6: "required",
+					7: "required",
+					8: "required",
+					9: "required",
+					10: "required"
+				},
+				messages: {
+					1: "Please select an answer for question 1",
+					2: "Please select an answer for question 2",
+					3: "Please select an answer for question 3",
+					4: "Please select an answer for question 4",
+					5: "Please select an answer for question 5",
+					6: "Please select an answer for question 6",
+					7: "Please select an answer for question 7",
+					8: "Please select an answer for question 8",
+					9: "Please select an answer for question 9",
+					10: "Please select an answer for question 10"
+				}
+				// return false;
+			});
+
+			for(var i = 1; i < 11; i++) {
+				ans = $("#"+1+"").val();
+				console.log(ans);
+				ansArray.push(ans);
+			}
+
+			// var newSurvey = {
+
+			// 	// name: $('#name').val().trim(),
+			// 	// phoneNumber: $('#phonenumber').val().trim(),
+			// 	// email: $('#email').val().trim(),
+			// 	// uniqueID: $('#uniqueID').val().trim()
+			// };
+
+			var currentURL = window.location.origin;
+
+			$.post(currentURL + "/survey/new", newSurvey)
+				.done(function (data) {
+					// console.log(data);
+					// console.log(reservations);
+					// alert('Adding character...');
+				});
+
+			return false;
+			// console.log(newReservation);
+		});
+	</script>
 
 </body>

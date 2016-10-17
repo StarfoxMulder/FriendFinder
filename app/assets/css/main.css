@@ -36,7 +36,10 @@
 /* -- Survey Page -- */
 
 #surveyP {
-	background-color: #C2FFEC;
+	background-image: url("../images/bkrnd2b.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 35%;
 }
 
 #overview {
@@ -48,7 +51,12 @@
 	font size: 20px;
 	color: #587F76;
 }
-
+label {
+	background-color: white;
+	font-family: 'Yantramanav', sans-serif;
+	color: #587F76;
+	padding: 2px 5px;
+}
 .input-field {
 	background-color: white;
 	color: #587F76;
