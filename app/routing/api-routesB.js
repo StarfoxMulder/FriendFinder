@@ -132,7 +132,6 @@ app.get("/home/all", function (req, res) {
 app.post("/register/new", function (req, res) {
 	var newUser = req.body;
 	newUser.name = newUser.name.replace(/\s+/g, "").toLowerCase();
-	newUser.pic = newUser.
 
 	// console.log(newReservation);
 
@@ -143,10 +142,9 @@ app.post("/register/new", function (req, res) {
 	// res.json(newReservation);
 });
 
-// app.post("/survey/new", function(req, res) {
-// 	var newSurvey = req.body;
-// 	newSurvey.
-// });
+app.post("/survey/new", function(req, res) {
+	var newSurvey
+})
 
 // Starts the server to begin listening
 // =============================================================

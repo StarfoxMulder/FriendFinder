@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">          
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Fugaz+One|Shrikhand|Yantramanav:500" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	 <!-- Compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<meta charset="UTF-8">
+	<title>PetFriender</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="../data/tempJS.js"></script>
+</head>
+
+<body id="surveyP">
+	<nav>
+	    <div class="nav-wrapper #a7ffeb teal accent-1">
+	        <a id="biglogo" class="brand-logo center #a7ffeb teal accent-1">
+	      		PetFriender
+	        </a>
+	    </div>
+	</nav>
+
+    <div class="divider"></div>
+	
+	<div class="section">
+		<div class="row">
+			<div class="col s6 offset-s3" id="overview">
+				The following ten questions will be used to find the best match for you and your pet! <br> <br> Each question is evaluated on a five point scale -- <br>
+				Where responding '1' is least favorable or disagreement and '5' is expressing highly favorable or full agreement.  
+				<br>
+				With the exception of those marked with an *, each question is <b>required</b> to find your match!
+			</div>
+		</div>
+
+		<div class="container">
+		<div class="nav-wrapper subnav-filters">
+			<div class="row">
+
+				<form id="formValidate" class="col s12">
+					<h3><strong>About You</strong></h3>
+                    <h3>Your Name</h3>
+                    <input type="text" name="" id="name" class="form-control" required >
+
+                    <h3>Link to Photo of Yourself</h3>
+                    <input type="text" name="" id="photo" class="form-control" required >
+
+                    <h3><strong></strong></h3>
+                    <h3>Your Pet's Name</h3>
+                    <input type="text" name="" id="petName" class="form-control">
+
+                    <h3>Type of Pet</h3>
+                    <input type="text" name="" id="petType" class="form-control">
+                    <hr>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="1">
+				      <option value="0" selected>I believe that my pet experiences human emotions</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="2">
+				      <option value="0" selected>I want to find someone who wants to spend as much (or more!) time with my pet as I do</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="3">
+				      <option value="0" disabled selected>I want to find someone whose pet is highly sociable, potentially BFFs with my own pet</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="4">
+				      <option value="0" disabled selected>My ideal first outing/date together would involve having our pets with us</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="5">
+				      <option value="0" disabled selected>My pet is family</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="6">
+				      <option value="0" disabled selected>I have absolutely no reservations about this whole thing!</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About You Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="7">
+				      <option value="0" disabled selected>My pet is very quick to make friends with everyone!</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About Your Pet Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="8">
+				      <option value="0" disabled selected>My pet runs off of rubs or other forms of physical affection</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About Your Pet Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="9">
+				      <option value="0" disabled selected>My pet senses my needs and acts on them</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About Your Pet Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="input-field col s12">
+				    <select id="10">
+				      <option value="0" disabled selected>My pet will get along well with yours, regardless of species</option>
+				      <option value="1">1</option>
+				      <option value="2">2</option>
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
+				    </select>
+				    <label>About Your Pet Questions</label>
+				  </div>
+				  </div>
+
+				  <div class="row">
+				  <div class="col s3 offset-s9">
+				  	<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">
+				  		Submit
+				  		<i class="material-icons right">send</i>
+				  	</button>
+				  </div>
+				  </div>
+
+				</form>
+
+			</div> <!-- end row for survey -->
+
+		</div>	<!-- end container for survey -->
+		</div>
+	</div> <!-- end section -->
+
+	<!-- Modal Codal -->
+	<div id="resultM" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title"><strong>Meet your new BFFs!!</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <img id="matchPhoto" src ="" alt="" height="400" width="325">
+            <h2 id="matchPetName"></h2>
+            <h2 id="matchPetType"></h2>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+	<script>
+		var currentUrl = window.location.origin;
+
+		console.log('ready');
+		AnsArray = [];
+
+		$('#submit').on('click', function () {
+			//for each input-field, get option value
+			// if val = 0, push to  and push it to answers []
+			$("#formValidate").validate({
+				rules: {
+					name: "required",
+					photo: {
+						required: true,
+						url: true },
+					1: "required",
+					2: "required",
+					3: "required",
+					4: "required",
+					5: "required",
+					6: "required",
+					7: "required",
+					8: "required",
+					9: "required",
+					10: "required"
+				},
+				messages: {
+					name: "Please enter your name :P",
+					photo: "Please include a URL for your picture.",
+					1: "Please select an answer for question 1",
+					2: "Please select an answer for question 2",
+					3: "Please select an answer for question 3",
+					4: "Please select an answer for question 4",
+					5: "Please select an answer for question 5",
+					6: "Please select an answer for question 6",
+					7: "Please select an answer for question 7",
+					8: "Please select an answer for question 8",
+					9: "Please select an answer for question 9",
+					10: "Please select an answer for question 10"
+				}
+				// return false;
+			});
+
+			userInfo = {
+				name: $('#name').val(),
+				photo: $('#photo').val(),
+				petName: $('#petName').val(),
+				petType: $('#petType').val(),
+				answers: [$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), $('#6').val(),
+						$('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()]	
+			}
+
+
+			$.post(currentURL + "/api/friends", userInfo, function(data) {
+				$('#matchName').text(data.name);
+				$('#matchPhoto').attr("src", data.photo);
+				$('#matchPetName').text(data.petName);
+				$('#matchPetName').text(data.petType);
+
+				$('#resultM').modal('toggle');
+
+				$('#name').val("");
+				$('#poto').val("");
+				$('#petName').val("");
+				$('#petType').val("");
+			});		
+
+			return false;
+			console.log(userInfo);
+		});
+	</script>
+
+</body>
+
+			<!-- 	.done(function (data) {
+					// console.log(data);
+					// console.log(reservations);
+					// alert('Adding character...');
+				}); -->
