@@ -28,17 +28,21 @@ app.post('/api/friends', function (req, res) {
 		var sum = friends.answers.reduce(add, 0);
 		var result = Math.abs(sum - median);
 			
-		if(result < currentBestMatchResult) {
+		if(result <= newUserAbs) {
 			currentBestMatchResult = result;
 			currentBestMatchIndex = i;
 		}
 	}
 
-	
+	//Now that we have a best match index, populate and toggle the modal
+	bff = friends[currentBestMatchIndex];
+
+	friends.push(newUser);
+
+	res.JSON(bff);
 
 
-	}
-})
+});
 
 // app.get("/survey", function (req, res) {
 // 	res.sendFile(path.join(__dirname, "/app/public/survey.html"));
