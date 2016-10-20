@@ -5,7 +5,7 @@ var friends = require('../data/friends.js');
 module.exports = function(app) {
 	// Basic route that sends the user home page
 	app.get('/api/friends', function (req, res) {
-		res.JSON(friends);
+		res.json(friends);
 	});
 
 	app.post('/api/friends', function (req, res) {
@@ -45,7 +45,7 @@ module.exports = function(app) {
 
 		friends.push(newUser);
 
-		res.JSON(friends[bffIndex]);
+		res.json(friends[bffIndex]);
 
 	});
 

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">          
 <head>
+	<meta charset="UTF-8">
+	<title>PetFriender</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Anton|Fugaz+One|Shrikhand|Yantramanav:500" rel="stylesheet">
-	<link rel="stylesheet" href="../assets/css/main.css">
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 	 <!-- Compiled and minified CSS -->
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
 	  <!-- Compiled and minified JavaScript -->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-	<meta charset="UTF-8">
-	<title>PetFriender</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<script src="../data/tempJS.js"></script>
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
 <body id="surveyP">
@@ -244,57 +243,63 @@
 	</script> -->
 
 	<script>
-		var currentUrl = window.location.origin;
+		$(document).ready(function() {
+       	 	// initializes dropdowns
+        	$('select').material_select();
+    	});
 
-		console.log('ready');
 		AnsArray = [];
 
 		$('#submit').on('click', function () {
 			//for each input-field, get option value
 			// if val = 0, push to  and push it to answers []
-			$("#formValidate").validate({
-				rules: {
-					name: "required",
-					photo: {
-						required: true,
-						url: true },
-					1: "required",
-					2: "required",
-					3: "required",
-					4: "required",
-					5: "required",
-					6: "required",
-					7: "required",
-					8: "required",
-					9: "required",
-					10: "required"
-				},
-				messages: {
-					name: "Please enter your name :P",
-					photo: "Please include a URL for your picture.",
-					1: "Please select an answer for question 1",
-					2: "Please select an answer for question 2",
-					3: "Please select an answer for question 3",
-					4: "Please select an answer for question 4",
-					5: "Please select an answer for question 5",
-					6: "Please select an answer for question 6",
-					7: "Please select an answer for question 7",
-					8: "Please select an answer for question 8",
-					9: "Please select an answer for question 9",
-					10: "Please select an answer for question 10"
-				}
-				// return false;
-			});
+			// $("#formValidate").validate({
+			// 	rules: {
+			// 		name: "required",
+			// 		photo: {
+			// 			required: true,
+			// 			url: true },
+			// 		1: "required",
+			// 		2: "required",
+			// 		3: "required",
+			// 		4: "required",
+			// 		5: "required",
+			// 		6: "required",
+			// 		7: "required",
+			// 		8: "required",
+			// 		9: "required",
+			// 		10: "required"
+			// 	},
+			// 	messages: {
+			// 		name: "Please enter your name :P",
+			// 		photo: "Please include a URL for your picture.",
+			// 		1: "Please select an answer for question 1",
+			// 		2: "Please select an answer for question 2",
+			// 		3: "Please select an answer for question 3",
+			// 		4: "Please select an answer for question 4",
+			// 		5: "Please select an answer for question 5",
+			// 		6: "Please select an answer for question 6",
+			// 		7: "Please select an answer for question 7",
+			// 		8: "Please select an answer for question 8",
+			// 		9: "Please select an answer for question 9",
+			// 		10: "Please select an answer for question 10"
+			// 	}
+			// }
+			// 	return false;
+			// });
 
 			userInfo = {
 				name: $('#name').val(),
 				photo: $('#photo').val(),
 				petName: $('#petName').val(),
 				petType: $('#petType').val(),
-				answers: [$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), $('#6').val(),
-						$('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()]	
-			}
+				answers: [
+					$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), 
+					$('#6').val(), $('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()
+				]	
+			};
 
+			var currentUrl = window.location.origin;
 
 			$.post(currentURL + "/api/friends", userInfo, function(data) {
 				$('#matchName').text(data.name);
@@ -302,7 +307,7 @@
 				$('#matchPetName').text(data.petName);
 				$('#matchPetName').text(data.petType);
 
-				$('#resultM').modal('toggle');
+				$('#resultM').openModal();
 
 				$('#name').val("");
 				$('#poto').val("");
