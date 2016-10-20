@@ -33,8 +33,6 @@
 			<div class="col s6 offset-s3" id="overview">
 				The following ten questions will be used to find the best match for you and your pet! <br> <br> Each question is evaluated on a five point scale -- <br>
 				Where responding '1' is least favorable or disagreement and '5' is expressing highly favorable or full agreement.  
-				<br>
-				With the exception of those marked with an *, each question is <b>required</b> to find your match!
 			</div>
 		</div>
 
@@ -43,20 +41,6 @@
 			<div class="row">
 
 				<form id="formValidate" class="col s12">
-					<h3><strong>About You</strong></h3>
-                    <h3>Your Name</h3>
-                    <input type="text" name="" id="name" class="form-control" required >
-
-                    <h3>Link to Photo of Yourself</h3>
-                    <input type="text" name="" id="photo" class="form-control" required >
-
-                    <h3><strong></strong></h3>
-                    <h3>Your Pet's Name</h3>
-                    <input type="text" name="" id="petName" class="form-control">
-
-                    <h3>Type of Pet</h3>
-                    <input type="text" name="" id="petType" class="form-control">
-                    <hr>
 
 				  <div class="row">
 				  <div class="input-field col s12">
@@ -157,48 +141,6 @@
 				  </div>
 
 				  <div class="row">
-				  <div class="input-field col s12">
-				    <select id="8">
-				      <option value="0" disabled selected>My pet runs off of rubs or other forms of physical affection</option>
-				      <option value="1">1</option>
-				      <option value="2">2</option>
-				      <option value="3">3</option>
-				      <option value="4">4</option>
-				      <option value="5">5</option>
-				    </select>
-				    <label>About Your Pet Questions</label>
-				  </div>
-				  </div>
-
-				  <div class="row">
-				  <div class="input-field col s12">
-				    <select id="9">
-				      <option value="0" disabled selected>My pet senses my needs and acts on them</option>
-				      <option value="1">1</option>
-				      <option value="2">2</option>
-				      <option value="3">3</option>
-				      <option value="4">4</option>
-				      <option value="5">5</option>
-				    </select>
-				    <label>About Your Pet Questions</label>
-				  </div>
-				  </div>
-
-				  <div class="row">
-				  <div class="input-field col s12">
-				    <select id="10">
-				      <option value="0" disabled selected>My pet will get along well with yours, regardless of species</option>
-				      <option value="1">1</option>
-				      <option value="2">2</option>
-				      <option value="3">3</option>
-				      <option value="4">4</option>
-				      <option value="5">5</option>
-				    </select>
-				    <label>About Your Pet Questions</label>
-				  </div>
-				  </div>
-
-				  <div class="row">
 				  <div class="col s3 offset-s9">
 				  	<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">
 				  		Submit
@@ -214,111 +156,61 @@
 		</div>	<!-- end container for survey -->
 		</div>
 	</div> <!-- end section -->
-
-	<!-- Modal Codal -->
-	<div id="resultM" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">X</button>
-            <h2 class="modal-title"><strong>Meet your new BFFs!!</strong></h2>
-          </div>
-          <div class="modal-body">
-            <h2 id="matchName"></h2>
-            <img id="matchPhoto" src ="" alt="" height="400" width="325">
-            <h2 id="matchPetName"></h2>
-            <h2 id="matchPetType"></h2>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-<!--     <script type="text/javascript">
-		$('select').material_select();
-	</script> -->
-
 	<script>
-		var currentUrl = window.location.origin;
-
 		console.log('ready');
-		AnsArray = [];
+		newUser = [];
 
 		$('#submit').on('click', function () {
 			//for each input-field, get option value
 			// if val = 0, push to  and push it to answers []
 			$("#formValidate").validate({
 				rules: {
-					name: "required",
-					photo: {
-						required: true,
-						url: true },
 					1: "required",
 					2: "required",
 					3: "required",
 					4: "required",
 					5: "required",
 					6: "required",
-					7: "required",
-					8: "required",
-					9: "required",
-					10: "required"
+					7: "required"
 				},
 				messages: {
-					name: "Please enter your name :P",
-					photo: "Please include a URL for your picture.",
 					1: "Please select an answer for question 1",
 					2: "Please select an answer for question 2",
 					3: "Please select an answer for question 3",
 					4: "Please select an answer for question 4",
 					5: "Please select an answer for question 5",
 					6: "Please select an answer for question 6",
-					7: "Please select an answer for question 7",
-					8: "Please select an answer for question 8",
-					9: "Please select an answer for question 9",
-					10: "Please select an answer for question 10"
+					7: "Please select an answer for question 7"
 				}
 				// return false;
 			});
 
-			userInfo = {
-				name: $('#name').val(),
-				photo: $('#photo').val(),
-				petName: $('#petName').val(),
-				petType: $('#petType').val(),
-				answers: [$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), $('#6').val(),
-						$('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()]	
+			for(var i = 1; i < 11; i++) {
+				ans = $("#"+1+"").val();
+				console.log(ans);
+				ansArray.push(ans);
 			}
 
+			// var newSurvey = {
 
-			$.post(currentURL + "/api/friends", userInfo, function(data) {
-				$('#matchName').text(data.name);
-				$('#matchPhoto').attr("src", data.photo);
-				$('#matchPetName').text(data.petName);
-				$('#matchPetName').text(data.petType);
+			// 	// name: $('#name').val().trim(),
+			// 	// phoneNumber: $('#phonenumber').val().trim(),
+			// 	// email: $('#email').val().trim(),
+			// 	// uniqueID: $('#uniqueID').val().trim()
+			// };
 
-				$('#resultM').modal('toggle');
+			var currentURL = window.location.origin;
 
-				$('#name').val("");
-				$('#poto').val("");
-				$('#petName').val("");
-				$('#petType').val("");
-			});		
+			$.post(currentURL + "/survey/new", newSurvey)
+				.done(function (data) {
+					// console.log(data);
+					// console.log(reservations);
+					// alert('Adding character...');
+				});
 
 			return false;
-			console.log(userInfo);
+			// console.log(newReservation);
 		});
 	</script>
 
 </body>
-
-			<!-- 	.done(function (data) {
-					// console.log(data);
-					// console.log(reservations);
-					// alert('Adding character...');
-				}); -->

@@ -4,11 +4,11 @@ var path = require('path');
 //Routing
 module.exports = function(app) {
 	app.get("/", function (req, res) {
-		res.sendFile(path.join(__dirname, "/../public/indexB.html"));
+		res.sendFile(path.join(__dirname, "/../public/index.html"));
 	});
 
-	app.get("/surveyB", function (req, res) {
-		res.sendFile(path.join(__dirname, "/../public/surveyB.html"));
+	app.get("/survey", function (req, res) {
+		res.sendFile(path.join(__dirname, "/../public/survey.html"));
 	});
 
 	//For separate Registration Page
@@ -28,6 +28,6 @@ module.exports = function(app) {
 
 	//defaulting to index if not matching route
 	app.use(function (req, res) {
-		res.sendFile(path.join(__dirname + "/../public/indexB.html"));
+		res.sendFile(path.join(__dirname + "/../public/index.html"));
 	});	
 };

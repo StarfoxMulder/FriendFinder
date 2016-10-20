@@ -1,14 +1,14 @@
-var friends = require('../data/friendsB.js');
+var friends = require('../data/friends.js');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 	// Basic route that sends the user home page
-	app.get('/api/friendsB', function (req, res) {
+	app.get('/api/friends', function (req, res) {
 		res.JSON(friends);
 	});
 
-	app.post('/api/friendsB', function (req, res) {
+	app.post('/api/friends', function (req, res) {
 		var newUser = req.body;
 		var newMatch = {};
 		//Median response total is 30; absolute value of the result of subtracting 30 from the survey sum
