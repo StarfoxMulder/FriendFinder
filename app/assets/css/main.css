@@ -1,5 +1,5 @@
 #indexP {
-	background-image: url("../images/bkrnd2.jpg");
+	background-image: url("/../images/bkrnd2.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0 35%;
@@ -36,7 +36,7 @@
 /* -- Survey Page -- */
 
 #surveyP {
-	background-image: url("../images/bkrnd2b.jpg");
+	background-image: url("/../images/bkrnd2b.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0 35%;
