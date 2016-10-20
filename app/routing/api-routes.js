@@ -19,7 +19,7 @@ module.exports = function(app) {
 			return a + b;
 		};
 
-		var newUserSum = req.body.userInfo.answers.reduce(add, 0);
+		var newUserSum = newUser.answers.reduce(add, 0);
 		var newUserAbs = Math.abs(newUserSum - median);
 		var bestMatchIndex = 0;
 		// var currentBestMatchIndex = 0;
@@ -30,7 +30,7 @@ module.exports = function(app) {
 			var sum = friends.answers.reduce(add, 0);
 			var result = Math.abs(sum - median);
 
-			sumArray.push(result)
+			sumArray.push(result);
 		};
 
 		bffIndex = nearestResult(newUserAbs, sumArray);
