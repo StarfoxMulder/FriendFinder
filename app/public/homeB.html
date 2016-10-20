@@ -10,6 +10,7 @@
 
 	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  	<link rel="stylesheet" href="../assets/css/mainB.css">
 </head>
 <body>
 	<div class="row">
@@ -22,11 +23,11 @@
 	<div class="row">
 		<div class="col s3"></div>
 		<div class="col s6">
-			<a id="survey" href="/survey" class="waves-effect waves-light btn">Take the Survey!</a>
-			<a id="register" href="/register" class="waves-effect waves-light btn">Make A Reservation</a>
+			<a id="survey" href="/surveyB" class="waves-effect waves-light btn">Take the Survey!</a>
+			<a id="register" href="/registerB" class="waves-effect waves-light btn">Make A Reservation</a>
 		</div>
 	</div>
-
+<!-- 
 	<div class="row">
 		<div class="col s3"></div>
 		<table class="col s6">
@@ -39,19 +40,20 @@
 	        <tbody id="table">
 	        </tbody>
 	    </table>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
-		var currentURL = window.location.origin;
+		$('select').material_select();
+		// var currentURL = window.location.origin;
 
-		$.get(currentURL + "/view/all", function (data) {
-			for (var i = 0; i < data.length; i++) {
-				var reservation = $('<tr>');
-				reservation.attr('id', 'reservation-' + i);
-				$('#table').append(reservation);
-				$('#reservation-' + i).append('<td>' + data[i].name + '</td>');
-			}
-		});
+		// $.get(currentURL + "/view/all", function (data) {
+		// 	for (var i = 0; i < data.length; i++) {
+		// 		var reservation = $('<tr>');
+		// 		reservation.attr('id', 'reservation-' + i);
+		// 		$('#table').append(reservation);
+		// 		$('#reservation-' + i).append('<td>' + data[i].name + '</td>');
+		// 	}
+		// });
 	</script>
 
 

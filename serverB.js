@@ -4,7 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var friends = require('./app/data/friends.js');
+var friends = require('./app/data/friendsB.js');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -21,8 +21,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 // Routes
 // =============================================================
-require('./app/routing/api-routes.js')(app);
-require('./app/routing/html-routes.js')(app);
+require('./app/routing/api-routesB.js')(app);
+require('./app/routing/html-routesB.js')(app);
 // Basic route that sends the user home page
 		// app.get("/", function (req, res) {
 		// 	res.sendFile(path.join(__dirname, "/app/public/index.html"));
