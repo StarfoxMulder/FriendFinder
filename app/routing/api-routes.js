@@ -15,9 +15,15 @@ module.exports = function(app) {
 		//  should return best match under these criteria. 
 		//  Making 'median' var and 'add' function for returning sum of a user's survey results
 		var median = 30;
+		
 		function add(a,b) {
 			return a + b;
 		};
+		// function(previousValue, currentValue, currentIndex, array) {
+		// 	return previousValue += currentValue;
+		// });
+
+		console.log("The length of friends should be 10:  "+friends.length);
 
 		var newUserSum = newUser.answers.reduce(add, 0);
 		var newUserAbs = Math.abs(newUserSum - median);
@@ -26,15 +32,19 @@ module.exports = function(app) {
 		// var currentBestMatchResult = 20;
 		var sumArray = [];
 
+		console.log("newUser from api-routes: "+newUser);
+		console.log("newUserSum from api-routes: "+newUserSum);
+
 		for (var i=0; i < friends.length; i++){
-			var sum = friends.answers.reduce(add, 0);
+			var sum = friends[i].answers.reduce(add, 0);
 			var result = Math.abs(sum - median);
+			console.log(sum);
 
 			sumArray.push(result);
 		};
 
 		bffIndex = nearestResult(newUserAbs, sumArray);
-			
+		newBFF = friends[bffIndex];	
 				
 			// if(result <= newUserAbs) {
 			// 	currentBestMatchResult = result;
@@ -45,7 +55,7 @@ module.exports = function(app) {
 
 		friends.push(newUser);
 
-		res.json(friends[bffIndex]);
+		res.json(newBFF);
 
 	});
 

@@ -29,7 +29,7 @@
 	
 	<div class="section">
 		<div class="row">
-			<div class="col s6 offset-s3" id="overview">
+			<div class="col s8 offset-s2" id="overview">
 				The following ten questions will be used to find the best match for you and your pet! <br> <br> Each question is evaluated on a five point scale -- <br>
 				Where responding '1' is least favorable or disagreement and '5' is expressing highly favorable or full agreement.  
 				<br>
@@ -199,7 +199,7 @@
 
 				  <div class="row">
 				  <div class="col s3 offset-s9">
-				  	<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">
+				  	<button id="submitBtn" class="btn waves-effect waves-light">
 				  		Submit
 				  		<i class="material-icons right">send</i>
 				  	</button>
@@ -214,12 +214,84 @@
 		</div>
 	</div> <!-- end section -->
 
-	<!-- Modal Codal -->
-	<div id="resultM" class="modal fade" role="dialog">
-      <div class="modal-dialog">
+    <div id="modal1" class="modal">
+	  <div class="modal-content">
+	    <h4>Meet your new BFFs!!</h4>
+	    <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <img id="matchPhoto" src ="" alt="" height="400" width="325">
+            <h2 id="matchPetName"></h2>
+            <h2 id="matchPetType"></h2>
+        </div>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+	  </div>
+	</div>
 
+
+
+<!--     <script type="text/javascript">
+		$('select').material_select();
+	</script> -->
+
+	<script>
+		var currentURL = window.location.origin;
+		console.log("This is the path of currentURL : "+currentURL);
+
+		$(document).ready(function() {
+       	 	// initializes dropdowns
+        	$('select').material_select();
+    	});
+
+		AnsArray = [];
+
+		$('#submitBtn').on('click', function () {
+
+			userInfo = {
+				name: $('#name').val(),
+				photo: $('#photo').val(),
+				petName: $('#petName').val(),
+				petType: $('#petType').val(),
+				answers: [
+					$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), 
+					$('#6').val(), $('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()
+				]	
+			};
+
+			$.post(currentURL + "/api/friends", userInfo, function(data) {
+				$('.modal-trigger').leanModal();
+
+				$('#matchName').text(data.name);
+				$('#matchPhoto').attr("src", data.photo);
+				$('#matchPetName').text(data.petName);
+				$('#matchPetName').text(data.petType);
+
+				console.log("This is data from inside of $.post :"+data);
+			});		
+
+			// return false;
+			console.log("userInfo from end of script : "+userInfo);
+			return false;
+		});
+	</script>
+
+</body>
+
+			<!-- 	.done(function (data) {
+					// console.log(data);
+					// console.log(reservations);
+					// alert('Adding character...');
+				}); -->
+
+			<!-- 	I realized I was trying to use a bootstrap modal in Materialize!!! What an Idiot!!! -->
+
+				<!-- Modal Codal -->
+<!-- 	<div id="resultM" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+ -->
         <!-- Modal content-->
-        <div class="modal-content">
+<!--         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">X</button>
             <h2 class="modal-title"><strong>Meet your new BFFs!!</strong></h2>
@@ -236,21 +308,9 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
-<!--     <script type="text/javascript">
-		$('select').material_select();
-	</script> -->
-
-	<script>
-		$(document).ready(function() {
-       	 	// initializes dropdowns
-        	$('select').material_select();
-    	});
-
-		AnsArray = [];
-
-		$('#submit').on('click', function () {
+<!--     	//// Attempt at form validation via materialize js \\\\
 			//for each input-field, get option value
 			// if val = 0, push to  and push it to answers []
 			// $("#formValidate").validate({
@@ -286,44 +346,4 @@
 			// 	}
 			// }
 			// 	return false;
-			// });
-
-			userInfo = {
-				name: $('#name').val(),
-				photo: $('#photo').val(),
-				petName: $('#petName').val(),
-				petType: $('#petType').val(),
-				answers: [
-					$('#1').val(), $('#2').val(), $('#3').val(), $('#4').val(), $('#5').val(), 
-					$('#6').val(), $('#7').val(), $('#8').val(), $('#9').val(), $('#10').val()
-				]	
-			};
-
-			var currentUrl = window.location.origin;
-
-			$.post(currentURL + "/api/friends", userInfo, function(data) {
-				$('#matchName').text(data.name);
-				$('#matchPhoto').attr("src", data.photo);
-				$('#matchPetName').text(data.petName);
-				$('#matchPetName').text(data.petType);
-
-				$('#resultM').openModal();
-
-				$('#name').val("");
-				$('#poto').val("");
-				$('#petName').val("");
-				$('#petType').val("");
-			});		
-
-			return false;
-			console.log(userInfo);
-		});
-	</script>
-
-</body>
-
-			<!-- 	.done(function (data) {
-					// console.log(data);
-					// console.log(reservations);
-					// alert('Adding character...');
-				}); -->
+			// }); -->

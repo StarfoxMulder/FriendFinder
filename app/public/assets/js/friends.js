@@ -1,4 +1,4 @@
-var users = [
+var friends = [
 	{
 		name: "Astrid Bedastrid",
 		answers: [2,5,1,2,5,2,4,2,1,4],
@@ -18,7 +18,7 @@ var users = [
 		screenName: "SirDukeDog"
 	},
 	{
-		name: "Henry Klipsenger",
+		name: "Kenry Hissinger",
 		answers: [1,1,1,2,1,2,1,2,1,4],
 		picture: "../public/assets/images/HK.jpg",
 		petType: "Lizard",
@@ -82,7 +82,8 @@ var users = [
 	}
 ];
 
-module.exports = users;
+module.exports = friends;
+
 
 // backup
 // =============================================================

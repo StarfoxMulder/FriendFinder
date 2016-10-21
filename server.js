@@ -11,7 +11,7 @@ var app = express();
 var PORT = 3000;
 
 //static assets
-app.use(express.static('app/public'))
+app.use(express.static('app/public'));
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
