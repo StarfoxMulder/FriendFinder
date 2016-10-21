@@ -17,14 +17,16 @@ module.exports = function(app) {
 		var median = 30;
 		
 		function add(a,b) {
-			return a + b;
+
+			return parseFloat(a) + parseFloat(b);
 		};
 		// function(previousValue, currentValue, currentIndex, array) {
 		// 	return previousValue += currentValue;
 		// });
 
-		console.log("The length of friends should be 10:  "+friends.length);
+		console.log("The length of friends should be 9:  "+friends.length);
 
+		var newUserSum = 0;
 		var newUserSum = newUser.answers.reduce(add, 0);
 		var newUserAbs = Math.abs(newUserSum - median);
 		var bestMatchIndex = 0;
@@ -32,19 +34,27 @@ module.exports = function(app) {
 		// var currentBestMatchResult = 20;
 		var sumArray = [];
 
-		console.log("newUser from api-routes: "+newUser);
+		console.log("newUserAbs from api-routes: "+newUserAbs);
 		console.log("newUserSum from api-routes: "+newUserSum);
 
 		for (var i=0; i < friends.length; i++){
+
+			var sum = 0;
 			var sum = friends[i].answers.reduce(add, 0);
 			var result = Math.abs(sum - median);
-			console.log(sum);
+			console.log("Friend "+i+" sum: "+sum);
+			console.log("Friend "+i+" result: "+result);
+
 
 			sumArray.push(result);
 		};
 
 		bffIndex = nearestResult(newUserAbs, sumArray);
 		newBFF = friends[bffIndex];	
+
+		console.log("sumArray: "+sumArray);
+		console.log("bffIndex: "+bffIndex);
+
 				
 			// if(result <= newUserAbs) {
 			// 	currentBestMatchResult = result;
@@ -70,6 +80,7 @@ module.exports = function(app) {
 			}
 		}
 		return curr;
+		console.log("curr from nearestResults function: "+curr);
 	};
 
 }
