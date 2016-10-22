@@ -20,9 +20,10 @@ var friends = [
 	{
 		name: "Kenry Hissinger",
 		answers: [1,1,1,2,1,2,1,2,1,4],
-		picture: "../public/assets/images/HK.jpg",
+		picture: "../public/assets/images/HK2.jpg",
 		petType: "Lizard",
 		petName: "Herbert Herbert",
+		petPicture: "../public/assets/images/HH.jpg",
 		email: "newworldogre@gmail.com",
 		screenName: "ProbReactSolut"
 	},

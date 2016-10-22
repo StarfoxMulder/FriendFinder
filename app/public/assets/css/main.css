@@ -64,5 +64,21 @@ label {
 
 .modal-body{
 	background-color: #E7FFEE;
-	color: #3A403B;
+	font-family: 'Yantramanav', sans-serif;
+	color: #587F76;
+	text-align: center;
+}
+#modal1 {
+	height: auto;
+}
+
+.modal-trigger {
+	height: 0px;
+	width: 0px;
+}
+
+.modal-footer {
+	background-color: #E7FFEE;
+	font-family: 'Yantramanav', sans-serif;
+	color: #587F76;
 }
