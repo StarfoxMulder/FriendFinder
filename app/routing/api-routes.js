@@ -5,7 +5,7 @@ var friends = require('../data/friends.js');
 module.exports = function(app) {
 	// Basic route that sends the user home page
 	app.get('/api/friends', function (req, res) {
-		res.JSON(friends);
+		res.json(friends);
 	});
 
 	app.post('/api/friends', function (req, res) {
@@ -15,26 +15,46 @@ module.exports = function(app) {
 		//  should return best match under these criteria. 
 		//  Making 'median' var and 'add' function for returning sum of a user's survey results
 		var median = 30;
+		
 		function add(a,b) {
-			return a + b;
-		};
 
-		var newUserSum = req.body.userInfo.answers.reduce(add, 0);
+			return parseFloat(a) + parseFloat(b);
+		};
+		// function(previousValue, currentValue, currentIndex, array) {
+		// 	return previousValue += currentValue;
+		// });
+
+		console.log("The length of friends should be 9:  "+friends.length);
+
+		var newUserSum = 0;
+		var newUserSum = newUser.answers.reduce(add, 0);
 		var newUserAbs = Math.abs(newUserSum - median);
 		var bestMatchIndex = 0;
 		// var currentBestMatchIndex = 0;
 		// var currentBestMatchResult = 20;
 		var sumArray = [];
 
-		for (var i=0; i < friends.length; i++){
-			var sum = friends.answers.reduce(add, 0);
-			var result = Math.abs(sum - median);
+		console.log("newUserAbs from api-routes: "+newUserAbs);
+		console.log("newUserSum from api-routes: "+newUserSum);
 
-			sumArray.push(result)
+		for (var i=0; i < friends.length; i++){
+
+			var sum = 0;
+			var sum = friends[i].answers.reduce(add, 0);
+			var result = Math.abs(sum - median);
+			console.log("Friend "+i+" sum: "+sum);
+			console.log("Friend "+i+" result: "+result);
+
+
+			sumArray.push(result);
 		};
 
 		bffIndex = nearestResult(newUserAbs, sumArray);
-			
+		newBFF = friends[bffIndex];	
+
+		console.log("sumArray: "+sumArray);
+		console.log("bffIndex: "+bffIndex);
+
 				
 			// if(result <= newUserAbs) {
 			// 	currentBestMatchResult = result;
@@ -45,7 +65,7 @@ module.exports = function(app) {
 
 		friends.push(newUser);
 
-		res.JSON(friends[bffIndex]);
+		res.json(newBFF);
 
 	});
 
@@ -60,6 +80,7 @@ module.exports = function(app) {
 			}
 		}
 		return curr;
+		console.log("curr from nearestResults function: "+curr);
 	};
 
 }
