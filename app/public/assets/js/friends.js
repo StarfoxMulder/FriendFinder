@@ -1,14 +1,5 @@
 var friends = [
 	{
-		name: "Astrid Bedastrid",
-		answers: [2,5,1,2,5,2,4,2,1,4],
-		picture: "../public/assets/images/AB.jpg",
-		petType: "Cat",
-		petName: "Muffy",
-		email: "muffyMommy@gmail.com",
-		screenName: "MuffyMommy37"
-	},
-	{
 		name: "Kirsten Wing",
 		answers: [2,2,1,4,1,4,1,3,4,5],
 		picture: "../public/assets/images/KW.jpg",
@@ -16,16 +7,6 @@ var friends = [
 		petName: "Duke",
 		email: "SirDukeDog@gmail.com",
 		screenName: "SirDukeDog"
-	},
-	{
-		name: "Kenry Hissinger",
-		answers: [1,1,1,2,1,2,1,2,1,4],
-		picture: "../public/assets/images/HK2.jpg",
-		petType: "Lizard",
-		petName: "Herbert Herbert",
-		petPicture: "../public/assets/images/HH.jpg",
-		email: "newworldogre@gmail.com",
-		screenName: "ProbReactSolut"
 	},
 	{
 		name: "Charles G Koch",
@@ -80,6 +61,26 @@ var friends = [
 		petName: "LOL_IDK",
 		email: "giggles@gmail.com",
 		screenName: "GiggleGuy"
+	},
+	{
+		name: "Astrid Bedastrid",
+		answers: [2,5,1,2,5,2,4,2,1,4],
+		picture: "../public/assets/images/AB.jpg",
+		petType: "Cat",
+		petName: "Muffy",
+		petPicture: "../public/assets/images/M.jpg"
+		email: "muffyMommy@gmail.com",
+		screenName: "MuffyMommy37"
+	},
+	{
+		name: "Kenry Hissinger",
+		answers: [1,1,1,2,1,2,1,2,1,4],
+		picture: "../public/assets/images/HK2.jpg",
+		petType: "Lizard",
+		petName: "Herbert Herbert",
+		petPicture: "../public/assets/images/HH.jpg",
+		email: "newworldogre@gmail.com",
+		screenName: "ProbReactSolut"
 	}
 ];
 
