@@ -62,14 +62,16 @@ label {
 	color: #587F76;
 }
 
+.modal {
+	height: 100%;
+	overflow-y: hidden;
+}
+
 .modal-body{
 	background-color: #E7FFEE;
 	font-family: 'Yantramanav', sans-serif;
 	color: #587F76;
 	text-align: center;
-}
-#modal1 {
-	height: auto;
 }
 
 .modal-trigger {
@@ -81,4 +83,8 @@ label {
 	background-color: #E7FFEE;
 	font-family: 'Yantramanav', sans-serif;
 	color: #587F76;
+}
+
+#matchPhoto, #matchPhotoPet {
+	border-radius: 20px;
 }

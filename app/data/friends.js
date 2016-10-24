@@ -5,6 +5,7 @@ var friends = [
 		picture: "../assets/images/KW.jpg",
 		petType: "Dog",
 		petName: "Duke",
+		petPicture: "../assets/images/Duke.jpg",
 		email: "SirDukeDog@gmail.com",
 		screenName: "SirDukeDog"
 	},
@@ -14,6 +15,7 @@ var friends = [
 		picture: "../assets/images/CGK.jpg",
 		petType: "Dog",
 		petName: "Finky",
+		petPicture: "../assets/images/F.jpg",
 		email: "Misesman22@gmail.com",
 		screenName: "BastiatBro"
 	},
@@ -23,6 +25,7 @@ var friends = [
 		picture: "../assets/images/IP.jpg",
 		petType: "Dog",
 		petName: "Dagney",
+		petPicture: "../assets/images/D.jpg",
 		email: "Individualism43@gmail.com",
 		screenName: "I_Own_Me"
 	},
@@ -32,6 +35,7 @@ var friends = [
 		picture: "../assets/images/ED.jpg",
 		petType: "Cat",
 		petName: "Steve",
+		petPicture: "../assets/images/EDBs.jpg",
 		email: "RawPaw@gmail.com",
 		screenName: "JavaMan"
 	},
@@ -41,6 +45,7 @@ var friends = [
 		picture: "../assets/images/PT.jpg",
 		petType: "Cat",
 		petName: "Claire",
+		petPicture: "../assets/images/PTc.jpg",
 		email: "MoonSister@gmail.com",
 		screenName: "MoonSister"
 	},
@@ -50,6 +55,7 @@ var friends = [
 		picture: "../assets/images/HB.jpg",
 		petType: "Dog",
 		petName: "Hoagland",
+		petPicture: "../assets/images/HD.jpg",
 		email: "FNewYork@gmail.com",
 		screenName: "Hollywood"
 	},
@@ -59,6 +65,7 @@ var friends = [
 		picture: "../assets/images/SC.jpg",
 		petType: "Lizard",
 		petName: "LOL_IDK",
+		petPicture: "../assets/images/G.jpg",
 		email: "giggles@gmail.com",
 		screenName: "GiggleGuy"
 	},
