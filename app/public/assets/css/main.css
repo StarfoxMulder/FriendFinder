@@ -67,11 +67,16 @@ label {
 	overflow-y: hidden;
 }
 
+.modal-content, #modal1 {
+	border-radius: 17px;
+}
+
 .modal-body{
 	background-color: #E7FFEE;
 	font-family: 'Yantramanav', sans-serif;
 	color: #587F76;
 	text-align: center;
+	border-radius: 17px;
 }
 
 .modal-trigger {
@@ -86,5 +91,5 @@ label {
 }
 
 #matchPhoto, #matchPhotoPet {
-	border-radius: 20px;
+	border-radius: 17px;
 }
