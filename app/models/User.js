@@ -29,10 +29,6 @@ var UserSchema = new Schema({
     type: String,
     required: false
   },
-  articles: [{
-    type: Schema.Types.ObjectId,
-    ref: "Article"
-  }],
   notes: [{
     type: Schema.Types.ObjectId,
     ref: "Note"
