@@ -3,12 +3,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+// Adding to create backend
+var mongoose = require("mongoose");
+var Promise = require("bluebird");
 
 var friends = require('./app/data/friends.js');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+var PORT = 3001;
 
 //static assets
 app.use(express.static('app/public'));
@@ -23,6 +26,17 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // =============================================================
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes.js')(app);
+
+
+// MongoDB
+// =============================================================
+
+var databaseUri = "mongodb://localhost/petfriender";
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
 
 // Starts the server to begin listening
 // =============================================================
